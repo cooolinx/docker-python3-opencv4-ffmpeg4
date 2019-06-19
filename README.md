@@ -1,5 +1,5 @@
 # docker-python3-opencv4-ffmpeg4
-Repository for clean Dockerfile containing Python 3.7+, OpenCV 4.1+, FFmpeg 4.0+, based on Ubuntu 16.04 LTS https://hub.docker.com/r/cooolin/python3-opencv4-ffmpeg4
+Repository for clean Dockerfile containing Python 3.7+, OpenCV 4.1+, FFmpeg 4.1+, based on Ubuntu 16.04 LTS https://hub.docker.com/r/cooolin/python3-opencv4-ffmpeg4
 
 ## Build
 
