@@ -25,15 +25,13 @@ Image has Python 3.7.3, FFmpeg 4.1.3, OpenCV 4.1.0 ready to use. Example:
 # run image
 $ docker run --rm -it cooolin/python3-opencv4-ffmpeg4 bash
 
-# ffmpeg version
+# check versions
 $ ffmpeg -version | head -n1
 ffmpeg version 4.1.3-0york1~16.04 Copyright (c) 2000-2019 the FFmpeg developers
 
-# python version
 $ python3 --version
 Python 3.7.3
 
-# opencv version
 $ opencv_version
 4.1.0
 
