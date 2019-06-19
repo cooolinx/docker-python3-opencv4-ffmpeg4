@@ -5,7 +5,7 @@
 # https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa
 # https://launchpad.net/~jonathonf/+archive/ubuntu/ffmpeg-4
 
-# Problems:
+# Resolved problems:
 # 0x00. When see "ImportError: No module named 'apt_pkg'" on executing add-apt-repository:
 # https://stackoverflow.com/questions/41720578/modulenotfounderror-in-tracebacks-with-python3-6-on-linux
 #   (cmd: ln -s /usr/lib/python3/dist-packages/apt_pkg.cpython-35m-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/apt_pkg.so)
