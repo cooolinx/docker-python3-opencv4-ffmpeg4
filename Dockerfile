@@ -3,6 +3,14 @@
 # https://websiteforstudents.com/installing-the-latest-python-3-7-on-ubuntu-16-04-18-04/
 # https://www.pyimagesearch.com/2018/08/15/how-to-install-opencv-4-on-ubuntu/
 # https://launchpad.net/~deadsnakes/+archive/ubuntu/ppa
+# https://launchpad.net/~jonathonf/+archive/ubuntu/ffmpeg-4
+
+# Problems:
+# 0x00. When see "ImportError: No module named 'apt_pkg'" on executing add-apt-repository:
+# https://stackoverflow.com/questions/41720578/modulenotfounderror-in-tracebacks-with-python3-6-on-linux
+#   (cmd: ln -s /usr/lib/python3/dist-packages/apt_pkg.cpython-35m-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/apt_pkg.so)
+# https://stackoverflow.com/questions/42386097/python-add-apt-repository-importerror-no-module-named-apt-pkg
+#   (cmd: sed -i '1s/python3/python3.5/g' /usr/bin/add-apt-repository)
 
 FROM ubuntu:16.04
 
@@ -23,7 +31,7 @@ RUN apt-get -y update && \
         python3 \
         python3-dev \
         software-properties-common && \
-    sed -i '1s/python3/python3.5/g' /usr/bin/add-apt-repository \
+    ln -s /usr/lib/python3/dist-packages/apt_pkg.cpython-35m-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/apt_pkg.so \
     && \
     # Clean
     apt-get clean && \
@@ -43,8 +51,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
     rm -rf /var/lib/apt/lists/*
 
 # Install PIP
-RUN rm -f /usr/bin/lsb_release && \
-    wget --quiet https://bootstrap.pypa.io/get-pip.py && \
+RUN wget --quiet https://bootstrap.pypa.io/get-pip.py && \
     python3 get-pip.py && \
     rm -f get-pip.py && \
     pip3 install --upgrade pip && \
